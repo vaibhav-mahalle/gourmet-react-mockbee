@@ -11,7 +11,7 @@ const RoutingPath = () => {
             <Route path="/Wishlist" element={<Wishlist/>}/>
             <Route path="/Login" element={<Login/>}/>
             <Route path="/Signup" element={<Signup/>}/>
-            <Route path="/Error" element={<Error/>}/>
+            <Route path="/*" element={<Error/>}/>
         </Routes>
     )
 }
