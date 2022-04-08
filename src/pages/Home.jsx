@@ -1,6 +1,10 @@
+import {Link} from "react-router-dom";
+import "../App.css";
 const Home = () => {
     return(
-        <div>This is Home</div>
+       <div class="Page-container">
+           This is Home Page
+       </div>
     )
 }
 

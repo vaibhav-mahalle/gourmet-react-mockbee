@@ -1,6 +1,6 @@
 const Login = () => {
     return(
-        <div>This is Login</div>
+        <div class="Page-container">This is Login</div>
     )
 }
 
