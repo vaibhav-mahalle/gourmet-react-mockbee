@@ -1,0 +1,33 @@
+.cart-page{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.cart-grid{
+    display: grid;
+    grid-template-columns: (auto-fit, minmax(20rem,1fr));
+    place-content: center;
+    gap: 1rem;
+}
+.hor-space{
+    position: absolute;
+    right: 1rem;
+    margin-left: 6rem;
+}
+
+.card-text-container .slider-text-input{
+    width: 1.5rem;
+    height: 1.3rem;
+    border: 1px solid var(--bg-color);
+    border-radius: 0.2rem;
+    text-align: center;
+}
+
+.flex-center .card .btn-outline-warning{
+    color: var(--bg-color);
+}
+
+.page-container .section-heading{
+    color: var(--bg-color);
+}

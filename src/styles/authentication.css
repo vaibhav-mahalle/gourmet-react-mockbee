@@ -1,0 +1,21 @@
+
+.login-card{
+    padding: 2rem 1rem;
+    border: 2px solid var(--bg-color);
+    margin-top: 2rem;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+.login-card .btn-primary{
+    background-color: var(--bg-color);
+    color: var(--headline-color);
+    padding: 1rem 10rem;
+}
+
+input[type="text"]{
+    width: 23rem;
+}
+
+.login-card a{
+    color: var(--highlight-color);
+}

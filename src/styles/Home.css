@@ -1,0 +1,48 @@
+
+/* .banner-image{
+    background-image: url(/assets/gourmet\ bg.jpg);
+    height: calc(100vh - 5rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+} */
+
+.btn-link-noBorder{
+    color: var(--headline-color);
+}
+
+.overlay-text{
+    color: var(--headline-color);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+.overlay-text-container{
+    background-color: hsla(177, 100%, 14%, 0.6);
+}
+
+.card-badge-position{
+    position: absolute;
+    bottom: 1;
+    left: 0;
+}
+
+.grid-4-col{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(20rem, 1fr));
+    place-content: center ;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.navigation .btn{
+    padding: 1rem;
+}
+
+.navigation .btn:hover,.navigation .btn-link-noBorder:hover{
+   color: var(--highlight-color);
+
+}

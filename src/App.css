@@ -1,4 +1,6 @@
-
+ /* @import "/gourmet_react/src/styles/main.css"; */
+ @import "./styles/main.css";
+ @import "./styles/Home.css";
 .App {
   text-align: center;
 }
@@ -58,3 +60,5 @@
 .Page-container{
   margin-top: 6rem;
 }
+
+
