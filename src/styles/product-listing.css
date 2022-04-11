@@ -1,0 +1,41 @@
+
+.product-listing-heading{
+    color: var(--bg-color);
+}
+
+.product-listing-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5rem;
+}
+
+.filter-container .btn-link-noBorder{
+    color: var(--bg-color);
+    padding: 0 ;
+}
+
+.filter-container .btn-link-noBorder:hover{
+    color: var(--headline-color);
+    background-color: hsla(177, 100%, 14%, 0.6);
+    cursor: pointer;
+}
+
+.filter-container .card{
+    width: 15rem;
+    border-radius: 7px;
+}
+
+.filter-container input{
+    accent-color: var(--bg-color);
+}
+
+.products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+    place-content: center;
+    gap: 1rem;
+}
+
+.products-container .btn-success{
+    background-color: var(--bg-color);
+}
