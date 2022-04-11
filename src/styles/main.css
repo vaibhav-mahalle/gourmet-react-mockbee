@@ -1,15 +1,6 @@
-
-/* @import url("/gourmet_react/src/styles/authentication.css");
-@import url("/gourmet_react/src/styles/cart.css");
-@import url("/gourmet_react/src/styles/Home.css");
-@import url("/gourmet_react/src/styles/product-listing.css");
-@import url("/gourmet_react/src/styles/variable.css");
-@import url("/gourmet_react/src/styles/wishlist.css"); */
-
 @import "./Home.css";
- @import "./authentication.css";
- @import "./cart.css";
-
+@import "./authentication.css";
+@import "./cart.css";
 @import "./product-listing.css";
 @import "./variable.css";
 @import "./wishlist.css"; 
