@@ -8,6 +8,7 @@ const ProductCard = ({id,title, isLiked, imageUrl, qty, price, rating, storeName
         <div className="card-heading-container">
           <h3 className="font-md font-medium">{storeName}</h3>
           <h5 className="font-sm font-light p-b-1">{title}</h5>
+          <span>{price}</span>
         </div>
         <div className="card-badge card-badge-position">{category}</div>
         <div className="favourite-icon favourite-icon-position">

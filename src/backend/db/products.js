@@ -19,6 +19,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isDessert: true,
   },
 
   {
@@ -34,6 +35,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isDessert: true,
   },
 
   {
@@ -49,6 +51,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isDessert: true,
   },
 
   {
@@ -64,6 +67,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isDessert: true,
   },
 
   {
@@ -79,6 +83,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isDessert: true,
   },
 
   {
@@ -94,6 +99,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
 
   {
@@ -109,6 +115,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
 
   {
@@ -124,6 +131,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
 
   {
@@ -139,6 +147,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
 
   {
@@ -154,6 +163,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
   {
     _id: uuid(),
@@ -168,6 +178,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isIndian: true,
   },
   
   {
@@ -183,6 +194,7 @@ export const products = [
     isVeg: true,
     fastDelivery: true,
     offer: false,
+    isChinese: true,
   },
 
   {
@@ -193,7 +205,7 @@ export const products = [
     quantity: "1",
     price: 120,
     rating: "4.1",
-    category: "Dessert",
+    category: "FastFood",
     storeName: "McDonald's",
     isVeg: false,
     fastDelivery: true,
