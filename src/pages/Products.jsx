@@ -39,10 +39,35 @@ const Product = () => {
             <button className="btn-link-noBorder p-l-3">clear</button>
           </div>
           <div className="m-1 p-1 card card-shadow">
+            <div className="font-sm font-bold">Sort By Price</div>
+
+            <div className="align-categories">
+              <input
+                type="radio"
+                className="m-r-1"
+                name="sort-input"
+                id="low" 
+                onChange={() => filterDispatch({type:"SORT",payload:"LOW_TO_HIGH"})}
+              />
+              <label className="p-t-1 p-b-1">Low to high</label>
+            </div>
+
+            <div className="align-categories">
+              <input
+                type="radio"
+                className="m-r-1"
+                name="sort-input"
+                id="high"
+                onChange={() => filterDispatch({type:"SORT",payload:"HIGH_TO_LOW"})}
+              />
+              <label className="p-b-1">High to low</label>
+            </div>
+          </div>
+            <div className="m-1 p-1 card card-shadow">
             <div className="font-sm font-bold">Price</div>
-            <div className="flex-row">
+            <div className="flex-row slider">
               <span className="p-r-3">10</span>
-              <span className="p-l-3">10</span>
+              <span className="p-l-3">1000</span>
             </div>
             <div>
               <input
@@ -106,31 +131,7 @@ const Product = () => {
               </label>
             </div>
           </div>
-          <div className="m-1 p-1 card card-shadow">
-            <div className="font-sm font-bold">Sort By Price</div>
-
-            <div className="align-categories">
-              <input
-                type="radio"
-                className="m-r-1"
-                name="sort-input"
-                id="low" 
-                onChange={() => filterDispatch({type:"SORT",payload:"LOW_TO_HIGH"})}
-              />
-              <label className="p-t-1 p-b-1">Low to high</label>
-            </div>
-
-            <div className="align-categories">
-              <input
-                type="radio"
-                className="m-r-1"
-                name="sort-input"
-                id="high"
-                onChange={() => filterDispatch({type:"SORT",payload:"HIGH_TO_LOW"})}
-              />
-              <label className="p-b-1">High to low</label>
-            </div>
-          </div>
+          
         </div>
         <div className="product-container">
           {sortedData.map((item) => {
