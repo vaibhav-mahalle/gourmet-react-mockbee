@@ -104,22 +104,6 @@ export const products = [
 
   {
     _id: uuid(),
-    imageUrl: "https://ik.imagekit.io/j6wafbf7rcj/Gourmet_React/assets/top_picks_0hQo67utb.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649411272576",
-    isLiked: false,
-    title: "Biryani",
-    quantity: "1",
-    price: 520,
-    rating: "4.3",
-    category: "Indian",
-    storeName: "Behrouz",
-    isVeg: true,
-    fastDelivery: true,
-    offer: false,
-    isIndian: true,
-  },
-
-  {
-    _id: uuid(),
     imageUrl: "https://ik.imagekit.io/j6wafbf7rcj/Gourmet_React/assets/Indian_paneer.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649754071543",
     isLiked: false,
     title: "Paneer Lababdar",
@@ -174,7 +158,7 @@ export const products = [
     price: 180,
     rating: "4.9",
     category: "Indian",
-    storeName: "Raju Uncle's Chhole Bhature",
+    storeName: "Veera da Dhaba",
     isVeg: true,
     fastDelivery: true,
     offer: false,
