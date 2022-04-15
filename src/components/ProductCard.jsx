@@ -5,10 +5,10 @@ const ProductCard = ({id,title, isLiked, imageUrl, qty, price, rating, storeName
         <div className="image">
           <img src={imageUrl} alt={title} />
         </div>
-        <div className="card-heading-container">
-          <h3 className="font-md font-medium">{storeName}</h3>
-          <h5 className="font-sm font-light p-b-1">{title}</h5>
-          <span>{price}</span>
+        <div className="card-heading-container card-information">
+          <h3 className="font-md font-bold">{storeName}</h3>
+          <h5 className="font-sm font-medium">{title}</h5>
+          <span>₹{price}</span>          
         </div>
         <div className="card-badge card-badge-position">{category}</div>
         <div className="favourite-icon favourite-icon-position">
@@ -21,8 +21,8 @@ const ProductCard = ({id,title, isLiked, imageUrl, qty, price, rating, storeName
             <span>{rating}</span>
             <span className="material-icons">star</span>
           </button>
-        </div>
-        <button className="btn btn-success">Order Now</button>
+        </div>        
+        <button className="btn btn-success btn-order">Order Now</button>
       </div>
     </div>
   );
