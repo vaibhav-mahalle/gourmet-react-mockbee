@@ -1,41 +1,78 @@
-
-.product-listing-heading{
-    color: var(--bg-color);
+.product-listing-heading {
+  color: var(--bg-color);
 }
 
-.product-listing-container{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 5rem;
+.product-listing-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
 }
 
-.filter-container .btn-link-noBorder{
-    color: var(--bg-color);
-    padding: 0 ;
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.filter-container .btn-link-noBorder:hover{
-    color: var(--headline-color);
-    background-color: hsla(177, 100%, 14%, 0.6);
-    cursor: pointer;
+.filter-container .btn-link-noBorder {
+  color: var(--bg-color);
+  padding: 0;
 }
 
-.filter-container .card{
-    width: 15rem;
-    border-radius: 7px;
+.filter-container .btn-link-noBorder:hover {
+  color: var(--headline-color);
+  background-color: hsla(177, 100%, 14%, 0.6);
+  cursor: pointer;
 }
 
-.filter-container input{
-    accent-color: var(--bg-color);
+.filter-container .card {
+  width: 15rem;
+  border-radius: 7px;
 }
 
-.products-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
-    place-content: center;
-    gap: 1rem;
+.filter-container input {
+  accent-color: var(--bg-color);
 }
 
-.products-container .btn-success{
-    background-color: var(--bg-color);
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  place-content: center;
+  gap: 1rem;
+}
+
+.products-container .btn-success {
+  background-color: var(--bg-color);
+}
+
+.align-categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.rating-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+}
+
+.card-heading-container.card-information{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.btn.btn-success.btn-order{
+    padding: 1px;
+    border-radius: 0px;
+
+}
+
+.flex-row .slider{
+  justify-content: space-around;
 }

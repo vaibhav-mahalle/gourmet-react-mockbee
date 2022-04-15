@@ -23,7 +23,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Fast-Food",
+    categoryName: "FastFood",
     categoryImg:"https://ik.imagekit.io/j6wafbf7rcj/Gourmet_React/assets/mcdonald_s-removebg-preview_d3cfZ7mWP.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649411271442",
   
   },
