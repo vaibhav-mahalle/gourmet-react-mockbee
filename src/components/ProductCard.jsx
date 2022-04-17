@@ -1,40 +1,54 @@
 import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useWish } from "../context/WishContext";
-const ProductCard = ({_id,title, prevPrice, imageUrl, qty, price, rating, storeName, category}) => {
- const {cartState,cartDispatch} = useCart();
-const  {wishState,wishDispatch}  =  useWish();
+const ProductCard = ({
+  _id,
+  title,
+  prevPrice,
+  imageUrl,
+  qty,
+  price,
+  rating,
+  storeName,
+  category,
+}) => {
+  const { cartState, cartDispatch } = useCart();
+  const { wishState, wishDispatch } = useWish();
 
- const addToCart=(product)=>{
-  cartDispatch({
-      type:"ADD_TO_CART",
-      payload:product,
-  })   
-}
+  const addToCart = (product) => {
+    cartDispatch({
+      type: "ADD_TO_CART",
+      payload: product,
+    });
+  };
 
-const addToWish = (product) =>{
-  wishDispatch({
-    type:"ADD_TO_WISH",
-    payload:product,
-}) 
-}
+  const addToWish = (product) => {
+    wishDispatch({
+      type: "ADD_TO_WISH",
+      payload: product,
+    });
+  };
 
-const cartData = { _id:_id,
-  imageUrl:imageUrl,
-  price:price,
-  title:title,
-  rating:rating,
-  prevPrice:prevPrice,
-  quantity:1};
+  const cartData = {
+    _id: _id,
+    imageUrl: imageUrl,
+    price: price,
+    title: title,
+    rating: rating,
+    prevPrice: prevPrice,
+    quantity: 1,
+  };
 
-  const wishData = { _id:_id,
-    imageUrl:imageUrl,
-    price:price,
-    title:title,
-    rating:rating,
-    prevPrice:prevPrice,
-    quantity:1,
-    category:category,};
+  const wishData = {
+    _id: _id,
+    imageUrl: imageUrl,
+    price: price,
+    title: title,
+    rating: rating,
+    prevPrice: prevPrice,
+    quantity: 1,
+    category: category,
+  };
   return (
     <div className="flex-center">
       <div className="card card-shadow p-1">
@@ -44,12 +58,21 @@ const cartData = { _id:_id,
         <div className="card-heading-container card-information">
           <h3 className="font-md font-bold">{storeName}</h3>
           <h5 className="font-sm font-medium">{title}</h5>
-          <span>₹{price}</span>          
+          <span>₹{price}</span>
         </div>
         <div className="card-badge card-badge-position">{category}</div>
         <div className="favourite-icon favourite-icon-position">
-          <span className="btn btn-link-noBorder" onClick={()=> addToWish(wishData)}>
-            <span className="material-icons">favorite_border</span>
+          <span
+            className="btn btn-link-noBorder"
+            onClick={() => addToWish(wishData)}
+          >
+            {wishState.wishBasket.find(
+              (item) => item._id === _id
+            ) === undefined ? (
+              <span className="material-icons">favorite_border</span>
+            ) : (
+              <span class="material-icons">favorite</span>
+            )}
           </span>
         </div>
         <div className="ratings-container">
@@ -57,8 +80,13 @@ const cartData = { _id:_id,
             <span>{rating}</span>
             <span className="material-icons">star</span>
           </span>
-        </div>        
-        <button className="btn btn-success btn-order" onClick={()=> addToCart(cartData)}>Order Now</button>
+        </div>
+        <button
+          className="btn btn-success btn-order"
+          onClick={() => addToCart(cartData)}
+        >
+          Order Now
+        </button>
       </div>
     </div>
   );
