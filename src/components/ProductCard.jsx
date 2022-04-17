@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
-
+import { useWish } from "../context/WishContext";
 const ProductCard = ({_id,title, prevPrice, imageUrl, qty, price, rating, storeName, category}) => {
  const {cartState,cartDispatch} = useCart();
+const  {wishState,wishDispatch}  =  useWish();
 
  const addToCart=(product)=>{
   cartDispatch({
@@ -11,6 +12,12 @@ const ProductCard = ({_id,title, prevPrice, imageUrl, qty, price, rating, storeN
   })   
 }
 
+const addToWish = (product) =>{
+  wishDispatch({
+    type:"ADD_TO_WISH",
+    payload:product,
+}) 
+}
 
 const cartData = { _id:_id,
   imageUrl:imageUrl,
@@ -19,6 +26,15 @@ const cartData = { _id:_id,
   rating:rating,
   prevPrice:prevPrice,
   quantity:1};
+
+  const wishData = { _id:_id,
+    imageUrl:imageUrl,
+    price:price,
+    title:title,
+    rating:rating,
+    prevPrice:prevPrice,
+    quantity:1,
+    category:category,};
   return (
     <div className="flex-center">
       <div className="card card-shadow p-1">
@@ -32,7 +48,7 @@ const cartData = { _id:_id,
         </div>
         <div className="card-badge card-badge-position">{category}</div>
         <div className="favourite-icon favourite-icon-position">
-          <a className="btn btn-link-noBorder" href>
+          <a className="btn btn-link-noBorder" href="#" onClick={()=> addToWish(wishData)}>
             <span className="material-icons">favorite_border</span>
           </a>
         </div>
