@@ -137,7 +137,7 @@ const Product = () => {
           {sortedData.map((item) => {
             return (
               <ProductCard
-                id={item.id}
+                _id={item._id}
                 title={item.title}
                 isLiked={item.isLiked}
                 imageUrl={item.imageUrl}
@@ -146,6 +146,7 @@ const Product = () => {
                 rating={item.rating}
                 storeName={item.storeName}
                 category={item.category}
+                prevPrice={item.prevPrice}
               />
             );
           })}

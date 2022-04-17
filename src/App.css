@@ -60,4 +60,15 @@
   margin-top: 6rem;
 }
 
-
+.cart-icon{
+  position: relative;
+}
+.qty-badge-container{
+  position: absolute;
+  top: 1.2rem;
+  right: 0.3rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color:#e8e4e6;
+  color: #001e1d;
+}

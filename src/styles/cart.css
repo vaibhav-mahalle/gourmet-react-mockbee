@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: (auto-fit, minmax(20rem,1fr));
     place-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .hor-space{
     position: absolute;

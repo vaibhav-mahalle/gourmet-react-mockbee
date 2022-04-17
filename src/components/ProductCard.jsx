@@ -1,4 +1,24 @@
-const ProductCard = ({id,title, isLiked, imageUrl, qty, price, rating, storeName, category}) => {
+import { useEffect } from "react";
+import { useCart } from "../context/CartContext";
+
+const ProductCard = ({_id,title, prevPrice, imageUrl, qty, price, rating, storeName, category}) => {
+ const {cartState,cartDispatch} = useCart();
+
+ const addToCart=(product)=>{
+  cartDispatch({
+      type:"ADD_TO_CART",
+      payload:product,
+  })   
+}
+
+
+const cartData = { _id:_id,
+  imageUrl:imageUrl,
+  price:price,
+  title:title,
+  rating:rating,
+  prevPrice:prevPrice,
+  quantity:1};
   return (
     <div className="flex-center">
       <div className="card card-shadow p-1">
@@ -22,7 +42,7 @@ const ProductCard = ({id,title, isLiked, imageUrl, qty, price, rating, storeName
             <span className="material-icons">star</span>
           </button>
         </div>        
-        <button className="btn btn-success btn-order">Order Now</button>
+        <button className="btn btn-success btn-order" onClick={()=> addToCart(cartData)}>Order Now</button>
       </div>
     </div>
   );
