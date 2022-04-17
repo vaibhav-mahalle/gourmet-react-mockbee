@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import "../App.css";
 import { useCart } from "../context/CartContext";
+import { useWish } from "../context/WishContext";
 
 const Header = () => {
   const { cartState } = useCart();
   const { cartBasket } = cartState;
+  const {wishState} = useWish();
+  const {wishBasket} = wishState;
   return (
     <nav className="navigation nav-bar flex-row">
       <div className="p-1">
@@ -16,14 +19,14 @@ const Header = () => {
         <div className="button-box flex-row">
           <div className="box-pill p-1">
             <Link to="/Products" className="btn btn-link-noBorder font-bold">
-              <span class="material-icons">store</span>
+              <span className="material-icons">store</span>
             </Link>
           </div>
           <div className="box-pill">
             <Link to="/Wishlist" className="btn btn-link-noBorder cart-icon">
               <span className="material-icons">favorite_border</span>
               <span className="qty-badge-container font-bold">
-                {cartBasket?.length}
+                {wishBasket?.length}
               </span>
             </Link>
           </div>
@@ -37,7 +40,7 @@ const Header = () => {
           </div>
           <div className="box-pill p-1">
             <Link to="/Login" className="btn btn-link-noBorder font-bold">
-              <span class="material-icons">person</span>
+              <span className="material-icons">person</span>
             </Link>
           </div>
         </div>
