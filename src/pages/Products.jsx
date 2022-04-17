@@ -21,9 +21,9 @@ const Product = () => {
   console.log(productData);
   const sortByPrice = (state,products) => {
     if(state.sortBy === "HIGH_TO_LOW"){
-      return products.sort((a,b) => b["price"]-a["price"]);
+      return [...products].sort((a,b) => b["price"]-a["price"]);
     }else if(state.sortBy === "LOW_TO_HIGH"){
-      return products.sort((a,b) => a["price"]-b["price"]);
+      return [...products].sort((a,b) => a["price"]-b["price"]);
     }else{
       return products;
     }
@@ -31,8 +31,8 @@ const Product = () => {
 
   const filteredbyCategory =  (state,data) => {
     console.log("category filter",state,data);
-    if(state.category !== ""){
-      return data?.filter(item => item.category === state.category);
+    if(state.category.length > 0){
+      return data?.filter(item => state.category.includes(item.category));
     }
     return data;
   }
@@ -52,11 +52,10 @@ const Product = () => {
   console.log(productData);
   const allFilteredData = composeFunc(filterState,productData,sortByPrice,filteredbyCategory,filteredbyRating);
 
-  const sortedData = sortByPrice(productData,filterState);
+  // const sortedData = sortByPrice(productData,filterState);
   return (
     <div className="Page-container">
       <div className="product-listing-container">
-        {/* <Filter /> */}
         <div className="filter-container">
           <div className="flex-row">
             <div className="product-listing-heading p-1 font-md">Filters</div>
@@ -108,22 +107,22 @@ const Product = () => {
             <div className="font-sm font-bold">Category</div>
 
             <div className="align-categories">
-              <input type="checkbox" className="m-r-1" onChange={() => filteredbyCategory({type:"CATEGORY",payload:"Dessert"})} />
+              <input type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Dessert"})} />
               <label className="p-t-1 p-b-1" >Dessert</label>
             </div>
 
             <div className="align-categories">
-              <input type="checkbox" className="m-r-1" />
+              <input type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Indian"})}/>
               <label className="p-b-1">Indian</label>
             </div>
 
             <div className="align-categories">
-              <input type="checkbox" className="m-r-1" />
+              <input type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"FastFood"})}/>
               <label className="p-b-1">FastFood</label>
             </div>
 
             <div className="align-categories">
-              <input type="checkbox" className="m-r-1" />
+              <input type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Chinese"})}/>
               <label>Chinese</label>
             </div>
           </div>
