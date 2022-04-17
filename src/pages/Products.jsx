@@ -146,6 +146,7 @@ const Product = () => {
                 rating={item.rating}
                 storeName={item.storeName}
                 category={item.category}
+                prevPrice={item.prevPrice}
               />
             );
           })}

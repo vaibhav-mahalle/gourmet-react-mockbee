@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 
-const ProductCard = ({_id,title, isLiked, imageUrl, qty, price, rating, storeName, category}) => {
- const {cartDispatch} = useCart();
+const ProductCard = ({_id,title, prevPrice, imageUrl, qty, price, rating, storeName, category}) => {
+ const {cartState,cartDispatch} = useCart();
 
  const addToCart=(product)=>{
   cartDispatch({
@@ -10,11 +11,14 @@ const ProductCard = ({_id,title, isLiked, imageUrl, qty, price, rating, storeNam
   })   
 }
 
+
 const cartData = { _id:_id,
   imageUrl:imageUrl,
   price:price,
   title:title,
-  rating:rating,};
+  rating:rating,
+  prevPrice:prevPrice,
+  quantity:1};
   return (
     <div className="flex-center">
       <div className="card card-shadow p-1">

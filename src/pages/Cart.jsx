@@ -4,7 +4,9 @@ import { useCart } from "../context/CartContext";
 const Cart = () => {
   const { cartState} = useCart();
   const { cartBasket } = cartState;
-
+  const totalAmount = cartBasket.reduce( (acc,curr)=> acc+ curr.price*curr.quantity,0);
+  const prevTotalAmount = cartBasket.reduce( (acc,curr)=> acc+ curr.prevPrice*curr.quantity,0);
+  const QuantityTotal = cartBasket.reduce( (acc,curr)=> acc+ curr.quantity,0);
   
   return (
     <div className="Page-container">
@@ -14,6 +16,7 @@ const Cart = () => {
       <div className="cart-page">
         <div className="cart-grid">
           {cartBasket.map((cartItem) => {
+            console.log(cartItem.quantity);
             return (
               <CheckoutCard
                 _id={cartItem._id}
@@ -22,6 +25,7 @@ const Cart = () => {
                 qty={cartItem.quantity}
                 storeName={cartItem.storeName}
                 price={cartItem.price}
+                prevPrice={cartItem.prevPrice}
               />
             );
           })}
@@ -31,19 +35,19 @@ const Cart = () => {
             <div className="font-sm font-bold p-1">Price details</div>
             <hr />
             <div className="p-l-1 p-b-1">
-              Price (2 items) <span className="hor-space">₹500</span>
+              Price ({QuantityTotal} items) <span className="hor-space">₹{totalAmount}</span>
             </div>
             <div className="p-l-1 p-b-1">
-              Discounts <span className="hor-space">₹270</span>
+              Discounts <span className="hor-space">₹{prevTotalAmount-totalAmount}</span>
             </div>
             <div className="p-l-1 p-b-1">
               Delivery Charges <span className="hor-space">₹50</span>
             </div>
             <hr />
             <div className="p-l-1 p-b-1 p-t-1">
-              TOTAL AMOUNT <span className="hor-space">₹{}</span>
+              TOTAL AMOUNT <span className="hor-space">₹{totalAmount+50}</span>
             </div>
-            <div className="p-l-1 p-b-1">You will save ₹270 on this order</div>
+            <div className="p-l-1 p-b-1">You will save ₹{prevTotalAmount-totalAmount} on this order</div>
             <button className="btn btn-success">Place Order</button>
           </div>
         </div>
