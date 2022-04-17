@@ -90,23 +90,7 @@ const Product = () => {
               <label className="p-b-1">High to low</label>
             </div>
           </div>
-            <div className="m-1 p-1 card card-shadow">
-            <div className="font-sm font-bold">Price</div>
-            <div className="flex-row slider">
-              <span className="p-r-3">10</span>
-              <span className="p-l-3">1000</span>
-            </div>
-            <div>
-              <input
-                type="range"
-                min={1}
-                max={100}
-                defaultValue={50}
-                className="slider"
-                id="myRange"
-              />
-            </div>
-          </div>
+          
           <div className="m-1 p-1 card card-shadow">
             <div className="font-sm font-bold">Category</div>
 
