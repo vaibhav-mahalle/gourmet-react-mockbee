@@ -16,7 +16,7 @@ const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) 
               {/* <a href="#"><span className="material-icons">add</span></a><input className="slider-text-input" type="text" defaultValue={1} /><a href="#"><span className="material-icons">remove</span></a> */}
             </div>
             <div>{qty}</div>
-            <span>₹{price}</span><span className="p-l-1"><strike>{prevPrice}</strike></span>
+            <span>₹{price}</span><span className="p-l-1"><strike>₹{prevPrice}</strike></span>
           </div>
         </div>
         <button className="btn btn-outline-warning m-t-1 m-b-1">
