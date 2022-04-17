@@ -48,15 +48,15 @@ const cartData = { _id:_id,
         </div>
         <div className="card-badge card-badge-position">{category}</div>
         <div className="favourite-icon favourite-icon-position">
-          <a className="btn btn-link-noBorder" href="#" onClick={()=> addToWish(wishData)}>
+          <span className="btn btn-link-noBorder" onClick={()=> addToWish(wishData)}>
             <span className="material-icons">favorite_border</span>
-          </a>
+          </span>
         </div>
         <div className="ratings-container">
-          <button className="btn numbered-rating numbered-rating-position">
+          <span className="btn numbered-rating numbered-rating-position">
             <span>{rating}</span>
             <span className="material-icons">star</span>
-          </button>
+          </span>
         </div>        
         <button className="btn btn-success btn-order" onClick={()=> addToCart(cartData)}>Order Now</button>
       </div>

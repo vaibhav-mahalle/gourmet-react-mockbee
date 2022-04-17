@@ -13,7 +13,6 @@ const Wishlist = () => {
       
         <div className="wish-grid">
           {wishBasket.map((cartItem) => {
-            console.log(cartItem)
             return (
               <ProductCard
                 _id={cartItem._id}
