@@ -10,7 +10,7 @@ const Home = () => {
       <div className="grid-4-col">
         {categories.map((item) => {
           return (
-            <div>
+            <Link to="/Products">
               <div className="flex-center">
                 <div className="card card-shadow m-1 p-1 blur">
                   <div className="image">
@@ -21,7 +21,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

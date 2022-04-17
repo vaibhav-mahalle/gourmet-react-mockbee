@@ -27,7 +27,7 @@ const Signup = () => {
             <input className="input" type="text" placeholder="Password" />
           </div>
           <div>
-            <button className="btn-primary ">SignUp</button>
+          <Link to="/"><button className="btn-primary ">SignUp</button></Link>
           </div>
           <div className="p-l-1">
             I accept the <Link to="/Signup">Terms &amp; Conditions</Link> &amp;

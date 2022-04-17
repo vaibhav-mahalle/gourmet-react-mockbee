@@ -3,7 +3,9 @@ export const cartReducerFunction = (cartState, action) => {
       case "ADD_TO_CART":
         const findObj = cartState.cartBasket.find(item => item._id == action.payload._id);
         return (findObj === undefined)? {...cartState,cartBasket:[...cartState.cartBasket,action.payload]} : {...cartState,cartBasket:cartState.cartBasket.map(item => item._id === findObj._id ? {...item, quantity:item.quantity + 1}:item  )};
-        default:
+        case "REMOVE_TO_CART":
+          return  {...cartState,cartBasket:cartState.cartBasket.filter(item => item._id !== action.payload) }   
+        default: 
         return cartState;
     }
   };
