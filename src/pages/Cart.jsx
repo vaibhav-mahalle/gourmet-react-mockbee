@@ -8,6 +8,7 @@ const Cart = () => {
   const prevTotalAmount = cartBasket.reduce( (acc,curr)=> acc+ curr.prevPrice*curr.quantity,0);
   const QuantityTotal = cartBasket.reduce( (acc,curr)=> acc+ curr.quantity,0);
   
+ 
   return (
     <div className="Page-container">
       <div className="section-heading flex-center p-1 font-lg">

@@ -1,5 +1,10 @@
+import { useCart } from "../context/CartContext"
+
 const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) => {
-    
+  const {cartDispatch} = useCart();
+  const removeHandler = (id) =>{
+    cartDispatch({type:"REMOVE_TO_CART",payload:id})
+  } 
     return (
         <div className="card card-shadow p-1" key={_id}>
         <div className="flex-row">
@@ -16,13 +21,13 @@ const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) 
               {/* <a href="#"><span className="material-icons">add</span></a><input className="slider-text-input" type="text" defaultValue={1} /><a href="#"><span className="material-icons">remove</span></a> */}
             </div>
             <div>{qty}</div>
-            <span>₹{price}</span><span className="p-l-1"><strike>{prevPrice}</strike></span>
+            <span>₹{price}</span><span className="p-l-1"><strike>₹{prevPrice}</strike></span>
           </div>
         </div>
         <button className="btn btn-outline-warning m-t-1 m-b-1">
           Move to wishlist
         </button>
-        <button className="btn btn-outline-danger">Remove from cart</button>
+        <button className="btn btn-outline-danger" onClick={()=>removeHandler(_id)}>Remove from cart</button>
       </div>
     )
 }
