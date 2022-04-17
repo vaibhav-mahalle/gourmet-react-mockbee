@@ -25,25 +25,7 @@ const Home = () => {
           );
         })}
       </div>
-      <div className="font-md">BestSellers</div>
-      
-      <div className="grid-4-col">
-        {products.map((item) => {
-          return (
-            <ProductCard
-              id={item.id}
-              title={item.id}
-              isLiked={item.isLiked}
-              imageUrl={item.imageUrl}
-              qty={item.quantity}
-              price={item.price}
-              rating={item.rating}
-              storeName={item.storeName}
-              category={item.category}
-            />
-          );
-        })}
-      </div>
+
     </div>
   );
 };
