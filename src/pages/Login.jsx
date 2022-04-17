@@ -16,10 +16,10 @@ const Login = () => {
             </span>
           </div>
           <div className="p-b-1">
-            <input className="input" type="text" placeholder="Phone Number" />
+            <input className="input" type="text" placeholder="Phone Number" required />
           </div>
           <div>
-            <button className="btn-primary ">Login</button>
+            <Link to="/"><button className="btn-primary ">Login</button></Link>
           </div>
           <div className="p-l-1">
             I accept the <Link to="/Login">Terms &amp; Conditions</Link> &amp;

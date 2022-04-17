@@ -18,7 +18,8 @@ const Product = () => {
 
   useEffect(() => fetchProducts(), []);
 
-  const sortByPrice = (products, state) => {
+  console.log(productData);
+  const sortByPrice = (state,products) => {
     if(state.sortBy === "HIGH_TO_LOW"){
       return products.sort((a,b) => b["price"]-a["price"]);
     }else if(state.sortBy === "LOW_TO_HIGH"){
@@ -27,6 +28,29 @@ const Product = () => {
       return products;
     }
   }
+
+  const filteredbyCategory =  (state,data) => {
+    console.log("category filter",state,data);
+    if(state.category !== ""){
+      return data?.filter(item => item.category === state.category);
+    }
+    return data;
+  }
+
+  const filteredbyRating = (state,data) => {
+    console.log(data)
+    if(state.rating !== 0){
+      return data?.filter(item => state.rating >= item.rating);
+    }
+    return data;
+  }
+
+  const composeFunc = (state,data, ...functions) =>{
+    console.log("calling",data)
+    return functions.reduce((acc, curr) => curr(state, acc), data);
+  }
+  console.log(productData);
+  const allFilteredData = composeFunc(filterState,productData,sortByPrice,filteredbyCategory,filteredbyRating);
 
   const sortedData = sortByPrice(productData,filterState);
   return (
@@ -84,8 +108,8 @@ const Product = () => {
             <div className="font-sm font-bold">Category</div>
 
             <div className="align-categories">
-              <input type="checkbox" className="m-r-1" />
-              <label className="p-t-1 p-b-1">Dessert</label>
+              <input type="checkbox" className="m-r-1" onChange={() => filteredbyCategory({type:"CATEGORY",payload:"Dessert"})} />
+              <label className="p-t-1 p-b-1" >Dessert</label>
             </div>
 
             <div className="align-categories">
@@ -134,7 +158,8 @@ const Product = () => {
           
         </div>
         <div className="product-container">
-          {sortedData.map((item) => {
+          {allFilteredData.map((item) => {
+            console.log(allFilteredData)
             return (
               <ProductCard
                 _id={item._id}
