@@ -36,17 +36,17 @@ const Cart = () => {
             <div className="font-sm font-bold p-1">Price details</div>
             <hr />
             <div className="p-l-1 p-b-1">
-              Price ({QuantityTotal} items) <span className="hor-space">₹{totalAmount}</span>
+              Price ({QuantityTotal} items) <span className="hor-space">₹{prevTotalAmount}</span>
             </div>
             <div className="p-l-1 p-b-1">
               Discounts <span className="hor-space">₹{prevTotalAmount-totalAmount}</span>
             </div>
             <div className="p-l-1 p-b-1">
-              Delivery Charges <span className="hor-space">₹50</span>
+              Delivery Charges <span className="hor-space">₹{(cartBasket.length === 0)? 0 : 50}</span>
             </div>
             <hr />
             <div className="p-l-1 p-b-1 p-t-1">
-              TOTAL AMOUNT <span className="hor-space">₹{totalAmount+50}</span>
+              TOTAL AMOUNT <span className="hor-space">₹{(totalAmount !== 0)?totalAmount+50:totalAmount}</span>
             </div>
             <div className="p-l-1 p-b-1">You will save ₹{prevTotalAmount-totalAmount} on this order</div>
             <button className="btn btn-success">Place Order</button>
