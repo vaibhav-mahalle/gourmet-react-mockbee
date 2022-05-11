@@ -27,7 +27,7 @@ const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) 
         <button className="btn btn-outline-warning m-t-1 m-b-1">
           Move to wishlist
         </button>
-        <button className="btn btn-outline-danger" onClick={()=>removeHandler(_id)}>Remove from cart</button>
+        <button className="btn btn-danger" onClick={()=>removeHandler(_id)}>Remove from cart</button>
       </div>
     )
 }
