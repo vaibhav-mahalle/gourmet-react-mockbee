@@ -110,7 +110,7 @@ const Product = () => {
           </div>
 
           <div className="m-1 p-1 card card-shadow">
-          <div className="font-sm font-bold">Price Slider 0-{price}</div>
+          <div className="font-sm font-bold">Price Slider {price}+</div>
           <input
                 // checked={filterState.sortBy === "LOW_TO_HIGH"}
                 type="range"
@@ -118,7 +118,7 @@ const Product = () => {
                 name="sort-input"
                 id="low"
                 value={price}
-                min={50}
+                min={0}
                 max={520}
                 onChange={(e) =>
                   filterDispatch({ type: "PRICE", payload: e.target.value })
