@@ -1,7 +1,17 @@
-import { useCart } from "../context/CartContext"
+import { useCart } from "../context/CartContext";
+import { useWish } from "../context/WishContext";
 
 const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) => {
   const {cartDispatch} = useCart();
+  const { wishState, wishDispatch } = useWish();
+
+  const addToWish = (product) => {
+    wishDispatch({
+      type: "ADD_TO_WISH",
+      payload: product,
+    });
+  };
+
   const removeHandler = (id) =>{
     cartDispatch({type:"REMOVE_TO_CART",payload:id})
   } 
@@ -24,7 +34,7 @@ const CheckoutCard = ({_id,title,  imageUrl, qty, price, storeName, prevPrice}) 
             <span>₹{price}</span><span className="p-l-1"><strike>₹{prevPrice}</strike></span>
           </div>
         </div>
-        <button className="btn btn-outline-warning m-t-1 m-b-1">
+        <button className="btn btn-outline-warning m-t-1 m-b-1" onClick={()=>removeHandler(_id)} >
           Move to wishlist
         </button>
         <button className="btn btn-danger" onClick={()=>removeHandler(_id)}>Remove from cart</button>

@@ -70,7 +70,7 @@ const Product = () => {
               <input
               checked={filterState.sortBy === "LOW_TO_HIGH"}
                 type="radio"
-                className="m-r-1"
+                className="m-r-1 cursor-pointer"
                 name="sort-input"
                 id="low" 
                 onChange={() => filterDispatch({type:"SORT",payload:"LOW_TO_HIGH"})}
@@ -82,7 +82,7 @@ const Product = () => {
               <input
               checked={filterState.sortBy === "HIGH_TO_LOW"}
                 type="radio"
-                className="m-r-1"
+                className="m-r-1 cursor-pointer"
                 name="sort-input"
                 id="high"
                 onChange={() => filterDispatch({type:"SORT",payload:"HIGH_TO_LOW"})}
@@ -95,22 +95,22 @@ const Product = () => {
             <div className="font-sm font-bold">Category</div>
 
             <div className="align-categories">
-              <input checked={category.includes("Dessert")} type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Dessert"})} />
+              <input checked={category.includes("Dessert")} type="checkbox" className="m-r-1 cursor-pointer" onChange={() => filterDispatch({type:"CATEGORY",payload:"Dessert"})} />
               <label className="p-t-1 p-b-1" >Dessert</label>
             </div>
 
             <div className="align-categories">
-              <input checked={category.includes("Indian")} type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Indian"})}/>
+              <input checked={category.includes("Indian")} type="checkbox" className="m-r-1 cursor-pointer" onChange={() => filterDispatch({type:"CATEGORY",payload:"Indian"})}/>
               <label className="p-b-1">Indian</label>
             </div>
 
             <div className="align-categories">
-              <input checked={category.includes("FastFood")}  type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"FastFood"})}/>
+              <input checked={category.includes("FastFood")}  type="checkbox" className="m-r-1 cursor-pointer" onChange={() => filterDispatch({type:"CATEGORY",payload:"FastFood"})}/>
               <label className="p-b-1">FastFood</label>
             </div>
 
             <div className="align-categories">
-              <input checked={category.includes("Chinese")} type="checkbox" className="m-r-1" onChange={() => filterDispatch({type:"CATEGORY",payload:"Chinese"})}/>
+              <input checked={category.includes("Chinese")} type="checkbox" className="m-r-1 cursor-pointer" onChange={() => filterDispatch({type:"CATEGORY",payload:"Chinese"})}/>
               <label>Chinese</label>
             </div>
           </div>
@@ -118,25 +118,25 @@ const Product = () => {
             <div className="font-sm font-bold">Ratings</div>
             
             <div className="rating-box">
-              <input checked={filterState.rating === 4} type="radio" className="m-r-1" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:4})} />
+              <input checked={filterState.rating === 4} type="radio" className="m-r-1 cursor-pointer" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:4})} />
               <label className="p-t-1 p-b-1">
               4 stars &amp; above
               </label>
             </div>
             <div className="rating-box">
-              <input checked={filterState.rating === 3} type="radio" className="m-r-1" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:3})}/>
+              <input checked={filterState.rating === 3} type="radio" className="m-r-1 cursor-pointer" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:3})}/>
               <label className="p-t-1 p-b-1">
               3 stars &amp; above
               </label>
             </div>
             <div className="rating-box">
-              <input checked={filterState.rating === 2} type="radio" className="m-r-1" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:2})}/>
+              <input checked={filterState.rating === 2} type="radio" className="m-r-1 cursor-pointer" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:2})}/>
               <label className="p-t-1 p-b-1">
               2 stars &amp; above
               </label>
             </div>
             <div className="rating-box">
-              <input checked={filterState.rating === 1} type="radio" className="m-r-1" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:1})}/>
+              <input checked={filterState.rating === 1} type="radio" className="m-r-1 cursor-pointer" name="rating-input" onChange={() => filterDispatch({type:"RATING",payload:1})}/>
               <label className="p-t-1 p-b-1">
               1 stars &amp; above
               </label>
