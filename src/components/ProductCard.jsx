@@ -91,7 +91,7 @@ const ProductCard = ({
             className="btn btn-success btn-order"
             onClick={() => addToCart(cartData)}
           >
-           { 1===2 ? "Order Now" : <Link to="/Cart">Go to cart</Link>} 
+           { false ? "Order Now" : "Go to cart"} 
           </button>
         </div>
       </div>

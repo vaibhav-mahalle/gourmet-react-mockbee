@@ -16,17 +16,19 @@ const Cart = () => {
       </div>
       <div className="cart-page">
         <div className="cart-grid">
-          {cartBasket.map((cartItem) => {
-            console.log(cartItem.quantity);
+          {cartBasket.map((item) => {
             return (
               <CheckoutCard
-                _id={cartItem._id}
-                title={cartItem.title}
-                imageUrl={cartItem.imageUrl}
-                qty={cartItem.quantity}
-                storeName={cartItem.storeName}
-                price={cartItem.price}
-                prevPrice={cartItem.prevPrice}
+                _id={item._id}
+                title={item.title}
+                isLiked={item.isLiked}
+                imageUrl={item.imageUrl}
+                qty={item.quantity}
+                price={item.price}
+                rating={item.rating}
+                storeName={item.storeName}
+                category={item.category}
+                prevPrice={item.prevPrice}
               />
             );
           })}
