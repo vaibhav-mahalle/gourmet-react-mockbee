@@ -27,6 +27,8 @@ const Wishlist = () => {
                 storeName={cartItem.storeName}
                 category={cartItem.category}
                 prevPrice={cartItem.prevPrice}
+
+                key={cartItem._id}
               />
             );
           })}

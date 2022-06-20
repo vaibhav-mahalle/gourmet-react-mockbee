@@ -77,7 +77,7 @@ const ProductCard = ({
               undefined ? (
                 <span className="material-icons">favorite_border</span>
               ) : (
-                <span class="material-icons">favorite</span>
+                <span className="material-icons">favorite</span>
               )}
             </span>
           </div>

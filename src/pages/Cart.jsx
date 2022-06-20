@@ -33,6 +33,8 @@ const Cart = () => {
                   storeName={item.storeName}
                   category={item.category}
                   prevPrice={item.prevPrice}
+
+                  key={item._id}
                 />
               );
             })}
