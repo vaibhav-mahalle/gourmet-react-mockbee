@@ -32,6 +32,9 @@ const ProductCard = ({
     });
   };
 
+  const isItemInCart = () => {
+    return cartState.cartBasket.some((element) => element._id === _id);
+  };
   const cartData = {
     _id: _id,
     imageUrl: imageUrl,
@@ -39,7 +42,7 @@ const ProductCard = ({
     title: title,
     rating: rating,
     prevPrice: prevPrice,
-    quantity: 1,
+    quantity: qty,
   };
 
   const wishData = {
@@ -70,9 +73,8 @@ const ProductCard = ({
               className="btn btn-link-noBorder"
               onClick={() => addToWish(wishData)}
             >
-              {wishState.wishBasket.find(
-                (item) => item._id === _id
-              ) === undefined ? (
+              {wishState.wishBasket.find((item) => item._id === _id) ===
+              undefined ? (
                 <span className="material-icons">favorite_border</span>
               ) : (
                 <span class="material-icons">favorite</span>
@@ -87,12 +89,20 @@ const ProductCard = ({
               </span>
             </div>
           </div>
-          <button
-            className="btn btn-success btn-order"
-            onClick={() => addToCart(cartData)}
-          >
-           { false ? "Order Now" : "Go to cart"} 
-          </button>
+          <>
+            {isItemInCart() ? (
+              <button className="btn btn-success btn-order">
+                <Link to="/cart">Go to Cart</Link>
+              </button>
+            ) : (
+              <button
+                className="btn btn-success btn-order"
+                onClick={() => addToCart(cartData)}
+              >
+                Order Now
+              </button>
+            )}
+          </>
         </div>
       </div>
     </div>
