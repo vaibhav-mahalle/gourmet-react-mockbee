@@ -72,3 +72,7 @@
   background-color:#e8e4e6;
   color: #001e1d;
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}

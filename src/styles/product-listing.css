@@ -5,13 +5,14 @@
 .product-listing-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .product-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .filter-container .btn-link-noBorder {
