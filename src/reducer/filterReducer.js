@@ -7,7 +7,9 @@ export const filterReducerFunction = (filterState, action) => {
       case "RATING":
         return { ...filterState, rating: action.payload };
       case "CLEAR":
-        return {...filterState,sortBy:"",rating:0, category:[]}
+        return {...filterState,sortBy:"",rating:0, category:[], price:0}
+      case "PRICE":
+        return {...filterState,price: action.payload}
     default:
       return filterState;
   }
