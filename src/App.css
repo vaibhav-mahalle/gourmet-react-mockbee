@@ -72,3 +72,19 @@
   background-color:#e8e4e6;
   color: #001e1d;
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.align-qty{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.empty-page-container{
+  display: flex;
+  justify-content: center;
+  margin: 10rem;
+}

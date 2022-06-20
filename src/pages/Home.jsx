@@ -11,7 +11,7 @@ const Home = () => {
         {categories.map((item) => {
           return (
             <Link to="/Products">
-              <div className="flex-center">
+              <div className="flex-center" key={item._id}>
                 <div className="card card-shadow m-1 p-1 blur">
                   <div className="image">
                     <img src={item.categoryImg} alt="Ice cream" />
