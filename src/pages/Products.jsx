@@ -42,6 +42,13 @@ const Product = () => {
     return data;
   };
 
+  const filteredbyPrice = (state, data) => {
+    if (state.price !== 0) {
+      return data?.filter((item) => state.price <= item.price);
+    }
+    return data;
+  };
+
   const composeFunc = (state, data, ...functions) => {
     return functions.reduce((acc, curr) => curr(state, acc), data);
   };
@@ -51,10 +58,11 @@ const Product = () => {
     productData,
     sortByPrice,
     filteredbyCategory,
-    filteredbyRating
+    filteredbyRating,
+    filteredbyPrice
   );
 
-  const { rating, category, sortBy } = filterState;
+  const { rating, category, sortBy, price } = filterState;
   return (
     <div className="Page-container">
       <div className="product-listing-container">
@@ -85,6 +93,7 @@ const Product = () => {
               <label className="p-t-1 p-b-1">Low to high</label>
             </div>
 
+
             <div className="align-categories">
               <input
                 checked={filterState.sortBy === "HIGH_TO_LOW"}
@@ -99,6 +108,24 @@ const Product = () => {
               <label className="p-b-1">High to low</label>
             </div>
           </div>
+
+          <div className="m-1 p-1 card card-shadow">
+          <div className="font-sm font-bold">Price Slider 0-{price}</div>
+          <input
+                // checked={filterState.sortBy === "LOW_TO_HIGH"}
+                type="range"
+                className="m-r-1 cursor-pointer"
+                name="sort-input"
+                id="low"
+                value={price}
+                min={50}
+                max={520}
+                onChange={(e) =>
+                  filterDispatch({ type: "PRICE", payload: e.target.value })
+                }
+              />
+          </div>
+
 
           <div className="m-1 p-1 card card-shadow">
             <div className="font-sm font-bold">Category</div>
